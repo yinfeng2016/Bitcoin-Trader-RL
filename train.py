@@ -15,7 +15,7 @@ from util.indicators import add_indicators
 
 curr_idx = -1
 reward_strategy = 'sortino'
-input_data_file = 'data/coinbase_hourly.csv'
+input_data_file = 'data/Coinbase_BTCUSD_1h.csv'
 params_db_file = 'sqlite:///params.db'
 
 study_name = 'ppo2_' + reward_strategy
