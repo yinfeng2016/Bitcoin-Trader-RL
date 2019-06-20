@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import ta
 
-df = pd.read_csv('./data/coinbase_daily.csv')
+df = pd.read_csv('./data/Coinbase_BTCUSD_1h.csv')
 df = df.dropna().reset_index().sort_values('Date')
 
 ta_df = pd.DataFrame()
