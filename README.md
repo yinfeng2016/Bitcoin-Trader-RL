@@ -20,7 +20,10 @@ The first thing you will need to do to get started is install the requirements i
 
  ```bash
  sudo apt install libmpich-dev 
- 
+ // may also need below commad for libsm6:
+ libsm6 libxext6 libxrender-dev
+  ```
+  
  The requirements include the `tensorflow-gpu` library, though if you do not have access to a GPU, you should replace this requirement with `tensorflow`.
  
  # Finding Hyper-Parameters
