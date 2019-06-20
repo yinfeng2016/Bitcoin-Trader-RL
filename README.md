@@ -16,6 +16,10 @@ The first thing you will need to do to get started is install the requirements i
  ```bash
  pip install -r requirements.txt
  ```
+ if got error on installing mpi4py run below command:
+
+ ```bash
+ sudo apt install libmpich-dev 
  
  The requirements include the `tensorflow-gpu` library, though if you do not have access to a GPU, you should replace this requirement with `tensorflow`.
  
