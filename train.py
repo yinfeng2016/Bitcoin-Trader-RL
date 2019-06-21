@@ -53,8 +53,7 @@ model_params = {
 }
 
 if curr_idx == -1:
-    model = PPO2(MlpLnLstmPolicy, train_env, verbose=0, nminibatches=1,
-            tensorboard_log=Path("./tensorboard").name, **model_params)
+    model = PPO2(MlpLnLstmPolicy, train_env, verbose=0, nminibatches=1, **model_params)
 else:
     model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '.pkl', env=train_env)
 
