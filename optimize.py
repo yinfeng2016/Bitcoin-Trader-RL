@@ -24,7 +24,7 @@ from util.indicators import add_indicators
 
 
 reward_strategy = 'sortino'
-input_data_file = 'data/Coinbase_BTCUSD_1h.csv'
+input_data_file = 'data/Coinbase_BTCUSD_d.csv'
 params_db_file = 'sqlite:///params.db'
 
 # number of parallel jobs

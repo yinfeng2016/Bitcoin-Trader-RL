@@ -6,7 +6,7 @@ from sklearn import preprocessing
 
 scaler = preprocessing.MinMaxScaler()
 
-df = pd.read_csv('./data/Coinbase_BTCUSD_1h.csv')
+df = pd.read_csv('./data/Coinbase_BTCUSD_d.csv')
 df = df.dropna().reset_index().sort_values('Date')
 
 scaled_df = df[['Open', 'Close', 'High', 'Low']].values
