@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import gym
 import optuna
 import pandas as pd

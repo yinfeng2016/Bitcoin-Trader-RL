@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 
 A large part of the code in this file was sourced from the rl-baselines-zoo library on GitHub.
