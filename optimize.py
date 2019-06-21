@@ -79,8 +79,7 @@ def optimize_agent(trial):
         [lambda: BitcoinTradingEnv(test_df, **env_params)])
 
     model_params = optimize_ppo2(trial)
-    model = PPO2(MlpLnLstmPolicy, train_env, verbose=0, nminibatches=1,
-                 tensorboard_log=Path("./tensorboard").name, **model_params)
+    model = PPO2(MlpLnLstmPolicy, train_env, verbose=0, nminibatches=1,**model_params)
 
     last_reward = -np.finfo(np.float16).max
     evaluation_interval = int(len(train_df) / n_evaluations)
