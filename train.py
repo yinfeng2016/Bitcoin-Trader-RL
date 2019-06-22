@@ -23,8 +23,8 @@ params_db_file = 'sqlite:///params.db'
 # study = optuna.load_study(study_name=study_name, storage=params_db_file)
 # params = study.best_trial.params
 
-print("Training PPO2 agent with params:", params)
-print("Best trial reward:", -1 * study.best_trial.value)
+# print("Training PPO2 agent with params:", params)
+# print("Best trial reward:", -1 * study.best_trial.value)
 
 df = pd.read_csv(input_data_file)
 df = df.drop(['Symbol'], axis=1)
