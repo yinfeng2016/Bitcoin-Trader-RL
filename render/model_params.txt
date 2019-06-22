@@ -1,0 +1,2 @@
+Testing PPO2 agent with params: {'ent_coef': 0.0007202911125412598, 'forecast_len': 5.887382819816642, 'cliprange': 0.3261947640450864, 'learning_rate': 7.144328530893444e-05, 'lam': 0.8301743799197956, 'gamma': 0.9101692989809201, 'noptepochs': 4.9731219675268, 'n_steps': 20.794536388131707, 'confidence_interval': 0.7227206812298356}
+Best trial: 40360.390625
