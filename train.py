@@ -16,7 +16,7 @@ from util.indicators import add_indicators
 
 curr_idx = -1
 reward_strategy = 'sortino'
-input_data_file = 'data/Coinbase_BTCUSD_d.csv'
+input_data_file = 'data/Coinbase_BTCUSD_1h.csv'
 params_db_file = 'sqlite:///params.db'
 
 study_name = 'ppo2_' + reward_strategy
@@ -37,20 +37,36 @@ train_len = int(len(df)) - test_len
 train_df = df[:train_len]
 test_df = df[train_len:]
 
+# train_env = DummyVecEnv([lambda: BitcoinTradingEnv(
+#     train_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
+
+# test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
+#     test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
+
+# model_params = {
+#     'n_steps': int(params['n_steps']),
+#     'gamma': params['gamma'],
+#     'learning_rate': params['learning_rate'],
+#     'ent_coef': params['ent_coef'],
+#     'cliprange': params['cliprange'],
+#     'noptepochs': int(params['noptepochs']),
+#     'lam': params['lam'],
+# }
+
 train_env = DummyVecEnv([lambda: BitcoinTradingEnv(
-    train_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
+train_df, reward_func=reward_strategy, forecast_len=4, confidence_interval=0.81)])
 
 test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
-    test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
+test_df, reward_func=reward_strategy, forecast_len=4, confidence_interval=0.81)])
 
 model_params = {
-    'n_steps': int(params['n_steps']),
-    'gamma': params['gamma'],
-    'learning_rate': params['learning_rate'],
-    'ent_coef': params['ent_coef'],
-    'cliprange': params['cliprange'],
-    'noptepochs': int(params['noptepochs']),
-    'lam': params['lam'],
+'n_steps': 243,
+'gamma': 0.94715,
+'learning_rate': 0.00157,
+'ent_coef': 2.29869,
+'cliprange':  0.38388,
+'noptepochs': 35,
+'lam': 0.89837,
 }
 
 if curr_idx == -1:
