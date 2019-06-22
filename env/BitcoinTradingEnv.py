@@ -194,12 +194,12 @@ class BitcoinTradingEnv(gym.Env):
 
     def render(self, mode='human'):
         if mode == 'system':
-            print('Price: ' + str(self._current_price()))
-            print(
-                'Bought: ' + str(self.account_history[2][self.current_step]))
-            print(
-                'Sold: ' + str(self.account_history[4][self.current_step]))
-            print('Net worth: ' + str(self.net_worths[-1]))
+#            print('Price: ' + str(self._current_price()))
+#            print(
+#                'Bought: ' + str(self.account_history[2][self.current_step]))
+#            print(
+#                'Sold: ' + str(self.account_history[4][self.current_step]))
+            print('price: ' + str(self._current_price())+ ';',' Net worth: ' + str(self.net_worths[-1]))
 
         elif mode == 'human':
             if self.viewer is None:

@@ -97,3 +97,48 @@ W0622 13:39:39.639938 140249915737856 deprecation_wrapper.py:119] From /home/yan
 
 W0622 13:39:44.437421 140249915737856 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:245: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
 
+Training PPO2 agent with params: {'confidence_interval': 0.7227206812298356, 'forecast_len': 5.887382819816642, 'noptepochs': 4.9731219675268, 'learning_rate': 7.144328530893444e-05, 'ent_coef': 0.0007202911125412598, 'n_steps': 20.794536388131707, 'gamma': 0.9101692989809201, 'lam': 0.8301743799197956, 'cliprange': 0.3261947640450864}
+Best trial reward: 40360.390625
+WARNING: Logging before flag parsing goes to stderr.
+W0622 17:53:15.035372 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:98: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+W0622 17:53:15.035807 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:107: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0622 17:53:15.206713 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:114: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+W0622 17:53:15.207250 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/input.py:25: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0622 17:53:15.211137 140191929399040 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:420: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+W0622 17:53:15.406410 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/a2c/utils.py:156: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0622 17:53:16.723321 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:193: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0622 17:53:16.758075 140191929399040 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0622 17:53:21.130655 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:209: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0622 17:53:22.536511 140191929399040 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:245: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+[ 0 ] Training for:  13797  time steps
+[ 0 ] Total reward:  [10809.189]  (sortino)
+[ 1 ] Training for:  13797  time steps
+[ 1 ] Total reward:  [32416.94]  (sortino)
+[ 2 ] Training for:  13797  time steps
+[ 2 ] Total reward:  [44142.496]  (sortino)
+[ 3 ] Training for:  13797  time steps
+[ 3 ] Total reward:  [4043.258]  (sortino)
+[ 4 ] Training for:  13797  time steps
+[ 4 ] Total reward:  [27922.889]  (sortino)
+[ 5 ] Training for:  13797  time steps
+[ 5 ] Total reward:  [61340.152]  (sortino)
+[ 6 ] Training for:  13797  time steps
+[ 6 ] Total reward:  [80197.74]  (sortino)
+[ 7 ] Training for:  13797  time steps
+[ 7 ] Total reward:  [296141.16]  (sortino)
+[ 8 ] Training for:  13797  time steps
+[ 8 ] Total reward:  [66050.02]  (sortino)
+[ 9 ] Training for:  13797  time steps
+[ 9 ] Total reward:  [119601.2]  (sortino)
