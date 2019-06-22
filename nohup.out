@@ -1,0 +1,95 @@
+WARNING: Logging before flag parsing goes to stderr.
+W0622 06:37:08.008387 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:98: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+W0622 06:37:08.008917 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:107: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0622 06:37:08.622383 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:114: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+W0622 06:37:08.623083 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/input.py:25: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0622 06:37:08.627094 140175366973184 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:420: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+W0622 06:37:08.825787 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/a2c/utils.py:156: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0622 06:37:17.912920 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:193: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0622 06:37:18.126669 140175366973184 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0622 06:38:08.971956 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:209: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0622 06:38:14.176090 140175366973184 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:245: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+[ 0 ] Training for:  13797  time steps
+[ 0 ] Total reward:  [100598.98]  (sortino)
+Traceback (most recent call last):
+  File "/home/yanch2020/Bitcoin-Trader-RL/train.py", line 91, in <module>
+    model.save('./agents/ppo2_' + reward_strategy + '_' + str(idx) + '.pkl')
+  File "/home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py", line 428, in save
+    self._save_to_file(save_path, data=data, params=params_to_save)
+  File "/home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/base_class.py", line 455, in _save_to_file
+    with open(save_path, "wb") as file_:
+FileNotFoundError: [Errno 2] No such file or directory: './agents/ppo2_sortino_0.pkl'
+WARNING: Logging before flag parsing goes to stderr.
+W0622 07:08:40.054658 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:98: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+W0622 07:08:40.055170 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:107: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0622 07:08:40.223148 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:114: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+W0622 07:08:40.223820 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/input.py:25: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0622 07:08:40.227589 140420082071296 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:420: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+W0622 07:08:40.420113 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/a2c/utils.py:156: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0622 07:08:49.595343 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:193: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0622 07:08:49.825654 140420082071296 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0622 07:09:41.571263 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:209: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0622 07:09:46.825202 140420082071296 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:245: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+[ 0 ] Training for:  13797  time steps
+[ 0 ] Total reward:  [124744.875]  (sortino)
+[ 1 ] Training for:  13797  time steps
+[ 1 ] Total reward:  [70587.82]  (sortino)
+[ 2 ] Training for:  13797  time steps
+[ 2 ] Total reward:  [77321.59]  (sortino)
+[ 3 ] Training for:  13797  time steps
+[ 3 ] Total reward:  [95944.81]  (sortino)
+[ 4 ] Training for:  13797  time steps
+[ 4 ] Total reward:  [96478.234]  (sortino)
+[ 5 ] Training for:  13797  time steps
+[ 5 ] Total reward:  [97444.11]  (sortino)
+[ 6 ] Training for:  13797  time steps
+[ 6 ] Total reward:  [112470.22]  (sortino)
+[ 7 ] Training for:  13797  time steps
+[ 7 ] Total reward:  [198368.73]  (sortino)
+[ 8 ] Training for:  13797  time steps
+[ 8 ] Total reward:  [133701.77]  (sortino)
+[ 9 ] Training for:  13797  time steps
+[ 9 ] Total reward:  [85311.19]  (sortino)
+WARNING: Logging before flag parsing goes to stderr.
+W0622 13:38:38.042355 140249915737856 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:98: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+W0622 13:38:38.042768 140249915737856 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/tf_util.py:107: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0622 13:38:38.206503 140249915737856 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:114: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+W0622 13:38:38.207036 140249915737856 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/input.py:25: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0622 13:38:38.210410 140249915737856 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/common/policies.py:420: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+W0622 13:38:38.403761 140249915737856 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/a2c/utils.py:156: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0622 13:38:47.472471 140249915737856 deprecation_wrapper.py:119] From /home/yanch2020/.local/lib/python3.5/site-packages/stable_baselines/ppo2/ppo2.py:193: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0622 13:38:47.685945 140249915737856 deprecation.py:323] From /home/yanch2020/.local/lib/python3.5/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
