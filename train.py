@@ -19,12 +19,12 @@ reward_strategy = 'sortino'
 input_data_file = 'data/Coinbase_BTCUSD_1h.csv'
 params_db_file = 'sqlite:///params.db'
 
-# study_name = 'ppo2_' + reward_strategy
-# study = optuna.load_study(study_name=study_name, storage=params_db_file)
-# params = study.best_trial.params
+study_name = 'ppo2_' + reward_strategy
+study = optuna.load_study(study_name=study_name, storage=params_db_file)
+params = study.best_trial.params
 
-# print("Training PPO2 agent with params:", params)
-# print("Best trial reward:", -1 * study.best_trial.value)
+print("Training PPO2 agent with params:", params)
+print("Best trial reward:", -1 * study.best_trial.value)
 
 df = pd.read_csv(input_data_file)
 df = df.drop(['Symbol'], axis=1)
@@ -37,37 +37,23 @@ train_len = int(len(df)) - test_len
 train_df = df[:train_len]
 test_df = df[train_len:]
 
-# train_env = DummyVecEnv([lambda: BitcoinTradingEnv(
-#     train_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
-
-# test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
-#     test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
-
-# model_params = {
-#     'n_steps': int(params['n_steps']),
-#     'gamma': params['gamma'],
-#     'learning_rate': params['learning_rate'],
-#     'ent_coef': params['ent_coef'],
-#     'cliprange': params['cliprange'],
-#     'noptepochs': int(params['noptepochs']),
-#     'lam': params['lam'],
-# }
-
 train_env = DummyVecEnv([lambda: BitcoinTradingEnv(
-train_df, reward_func=reward_strategy, forecast_len=4, confidence_interval=0.81)])
+    train_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
 
 test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
-test_df, reward_func=reward_strategy, forecast_len=4, confidence_interval=0.81)])
+    test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
 
 model_params = {
-'n_steps': 243,
-'gamma': 0.94715,
-'learning_rate': 0.00157,
-'ent_coef': 2.29869,
-'cliprange':  0.38388,
-'noptepochs': 35,
-'lam': 0.89837,
+    'n_steps': int(params['n_steps']),
+    'gamma': params['gamma'],
+    'learning_rate': params['learning_rate'],
+    'ent_coef': params['ent_coef'],
+    'cliprange': params['cliprange'],
+    'noptepochs': int(params['noptepochs']),
+    'lam': params['lam'],
 }
+
+
 
 if curr_idx == -1:
     model = PPO2(MlpLnLstmPolicy, train_env, verbose=0, nminibatches=1, **model_params)
