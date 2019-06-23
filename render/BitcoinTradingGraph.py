@@ -41,7 +41,7 @@ class BitcoinTradingGraph:
                             right=0.90, top=0.90, wspace=0.2, hspace=0)
 
         # Show the graph without blocking the rest of the program
-        plt.show(block=False)
+        # plt.show(block=False)
 
     def _render_net_worth(self, step_range, dates, current_step, net_worths, benchmarks):
         # Clear the frame rendered last step
@@ -160,6 +160,7 @@ class BitcoinTradingGraph:
 
         # Necessary to view frames before they are unrendered
         plt.pause(0.001)
+        plt.savefig('./home/yanch2020/Bitcoin-Trader-RL/test.png')
 
     def close(self):
         plt.close()
