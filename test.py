@@ -26,7 +26,7 @@ df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 df = add_indicators(df.reset_index())
 
-test_len = int(len(df) * 0.2)
+test_len = int(len(df) * 0.1)
 train_len = int(len(df)) - test_len
 
 test_df = df[train_len:]
