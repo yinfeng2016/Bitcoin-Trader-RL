@@ -26,7 +26,7 @@ df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 df = add_indicators(df.reset_index())
 
-test_len = int(len(df) * 0.9)
+test_len = int(len(df) * 0.2)
 train_len = int(len(df)) - test_len
 
 test_df = df[train_len:]
@@ -54,4 +54,4 @@ while not done:
     action, _states = model.predict(obs)
     obs, reward, done, info = test_env.step(action)
 
-    test_env.render(mode="system")
+    test_env.render(mode="human")
