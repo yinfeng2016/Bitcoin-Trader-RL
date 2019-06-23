@@ -9,9 +9,9 @@ from stable_baselines import A2C, ACKTR, PPO2
 from env.BitcoinTradingEnv import BitcoinTradingEnv
 from util.indicators import add_indicators
 
-curr_idx = 9
+curr_idx = 7
 reward_strategy = 'sortino'
-input_data_file = 'data/Coinbase_BTCUSD_1h.csv'
+input_data_file = 'data/Coinbase_BTCUSD_1h_2.csv'
 params_db_file = 'sqlite:///params.db'
 
 study_name = 'ppo2_' + reward_strategy
@@ -21,12 +21,12 @@ params = study.best_trial.params
 print("Testing PPO2 agent with params:", params)
 print("Best trial:", -1 * study.best_trial.value)
 
-df = pd.read_csv('./data/Coinbase_BTCUSD_1h.csv')
+df = pd.read_csv('./data/Coinbase_BTCUSD_1h_2.csv')
 df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 df = add_indicators(df.reset_index())
 
-test_len = int(len(df) * 0.1)
+test_len = int(len(df) * 0.025)
 train_len = int(len(df)) - test_len
 
 test_df = df[train_len:]
@@ -54,4 +54,4 @@ while not done:
     action, _states = model.predict(obs)
     obs, reward, done, info = test_env.step(action)
 
-    test_env.render(mode="human")
+    test_env.render(mode="system")
