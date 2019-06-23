@@ -163,4 +163,4 @@ class BitcoinTradingGraph:
         plt.savefig('./home/yanch2020/Bitcoin-Trader-RL/test.png')
 
     def close(self):
-        plt.close()
+        plt.close(fig)
