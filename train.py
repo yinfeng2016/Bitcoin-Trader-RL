@@ -60,7 +60,7 @@ if curr_idx == -1:
 else:
     model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_3' + '.pkl', env=train_env)
 
-for idx in range(curr_idx + 1, 10):
+for idx in range(curr_idx + 1, 15):
     print('[', idx, '] Training for: ', train_len, ' time steps')
 
     model.learn(total_timesteps=train_len)
