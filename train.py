@@ -58,7 +58,7 @@ model_params = {
 if curr_idx == -1:
     model = PPO2(MlpLnLstmPolicy, train_env, verbose=0, nminibatches=1, **model_params)
 else:
-    model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_3' + '.pkl', env=train_env)
+    model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_2' + '.pkl', env=train_env)
 
 for idx in range(curr_idx + 1, 15):
     print('[', idx, '] Training for: ', train_len, ' time steps')
@@ -74,4 +74,4 @@ for idx in range(curr_idx + 1, 15):
         reward_sum += reward
 
     print('[', idx, '] Total reward: ', reward_sum, ' (' + reward_strategy + ')')
-    model.save('./agents/ppo2_' + reward_strategy + '_' + str(idx) + '_3' + '.pkl')
+    model.save('./agents/ppo2_' + reward_strategy + '_' + str(idx) + '_2' + '.pkl')
