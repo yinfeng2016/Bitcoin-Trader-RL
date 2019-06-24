@@ -19,9 +19,7 @@ The first thing you will need to do to get started is install the requirements i
  if got error on installing mpi4py run below command:
 
  ```bash
- sudo apt install libmpich-dev 
- // may also need below commad for libsm6:
- libsm6 libxext6 libxrender-dev
+ sudo apt install libmpich-dev libsm6 libxext6 libxrender-dev
   ```
   
  The requirements include the `tensorflow-gpu` library, though if you do not have access to a GPU, you should replace this requirement with `tensorflow`.
@@ -45,6 +43,18 @@ Once you've found a good set of hyper-parameters, we can train an agent with tha
 ```bash
 python ./train.py
 ```
+nvidia-smi --query-gpu=utilization.gpu  -u --format=csv
+nvidia-smi --query-gpu=utilization.memory  -u --format=csv
+
+git clone https://github.com/b0noI/gcp-gpu-utilization-metrics.git
+cd gcp-gpu-utilization-metrics
+pip install -r ./requirenments.txt
+GOOGLE_CLOUD_PROJECT=<ID> python ./create_gpu_metrics.py
+
+git clone https://github.com/b0noI/gcp-gpu-utilization-metrics.git
+cd gcp-gpu-utilization-metrics
+pip install -r ./requirenments.txt
+python ./report_gpu_metrics.py 
 
 If you have already trained a model, and would like to resume training from the next epoch, you can set `curr_idx` at the top of the file to the index of the last trained model. Otherwise, leave this at `-1` to start training at epoch 0.
 
