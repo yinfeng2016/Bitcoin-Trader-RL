@@ -25,7 +25,7 @@ from util.indicators import add_indicators
 
 
 reward_strategy = 'sortino'
-input_data_file = 'data/Coinbase_BTCUSD_d.csv'
+input_data_file = 'data/Coinbase_BTCUSD_1h_2.csv'
 params_db_file = 'sqlite:///params.db'
 
 # number of parallel jobs
@@ -43,11 +43,11 @@ df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 df = add_indicators(df.reset_index())
 
-train_len = int(len(df) * 0.8)
+train_len = int(len(df) * 0.958)
 
 df = df[:train_len]
 
-validation_len = int(train_len * 0.8)
+validation_len = int(train_len * 0.958)
 train_df = df[:validation_len]
 test_df = df[validation_len:]
 

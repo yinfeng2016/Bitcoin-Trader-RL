@@ -3,7 +3,7 @@ import pandas as pd
 
 from util.benchmarks import buy_and_hodl, rsi_divergence, sma_crossover
 
-df = pd.read_csv('./data/Coinbase_BTCUSD_d.csv')
+df = pd.read_csv('./data/Coinbase_BTCUSD_1h_2.csv')
 df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 

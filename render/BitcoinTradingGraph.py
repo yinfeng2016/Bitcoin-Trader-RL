@@ -160,7 +160,7 @@ class BitcoinTradingGraph:
 
         # Necessary to view frames before they are unrendered
         plt.pause(0.001)
-        plt.savefig('./home/yanch2020/Bitcoin-Trader-RL/test.png')
+        plt.savefig('/home/yanch2020/Bitcoin-Trader-RL/test.png')
 
     def close(self):
         plt.close(fig)

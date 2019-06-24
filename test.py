@@ -47,7 +47,7 @@ model_params = {
     'lam': params['lam'],
 }
 
-model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '.pkl', env=test_env)
+model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_3' + '.pkl', env=test_env)
 
 obs, done = test_env.reset(), False
 while not done:

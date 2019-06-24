@@ -11,7 +11,7 @@ from env.BitcoinTradingEnv import BitcoinTradingEnv
 from util.indicators import add_indicators
 
 
-df = pd.read_csv('./data/Coinbase_BTCUSD_d.csv')
+df = pd.read_csv('./data/Coinbase_BTCUSD_1h_2.csv')
 df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 df = add_indicators(df.reset_index())
