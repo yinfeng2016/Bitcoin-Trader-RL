@@ -1,4 +1,5 @@
 import gym
+import csv
 import pandas as pd
 import numpy as np
 from numpy import inf
@@ -194,11 +195,11 @@ class BitcoinTradingEnv(gym.Env):
 
     def render(self, mode='human'):
         if mode == 'system':
-#            print('Price: ' + str(self._current_price()))
-#            print(
-#                'Bought: ' + str(self.account_history[2][self.current_step]))
-#            print(
-#                'Sold: ' + str(self.account_history[4][self.current_step]))
+            print('Price: ' + str(self._current_price()))
+            print(
+                'Bought: ' + str(self.account_history[2][self.current_step]))
+            print(
+                'Sold: ' + str(self.account_history[4][self.current_step]))
             print('price: ' + str(self._current_price())+ ';',' Net worth: ' + str(self.net_worths[-1]))
 
         elif mode == 'human':
