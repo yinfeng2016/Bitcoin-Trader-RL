@@ -14,12 +14,15 @@ https://towardsdatascience.com/using-reinforcement-learning-to-trade-bitcoin-for
 The first thing you will need to do to get started is install the requirements in `requirements.txt`.
 
  ```bash
- pip install -r requirements.txt
+ git clone https://github.com/yinfeng2016/Bitcoin-Trader-RL.git
+ cd Bitcoin-Trader-RL
+ sudo apt install libmpich-dev libsm6 libxext6 libxrender-dev
+ pip3 install -r requirements.txt
  ```
  if got error on installing mpi4py run below command:
 
  ```bash
- sudo apt install libmpich-dev libsm6 libxext6 libxrender-dev
+
   ```
   
  The requirements include the `tensorflow-gpu` library, though if you do not have access to a GPU, you should replace this requirement with `tensorflow`.
