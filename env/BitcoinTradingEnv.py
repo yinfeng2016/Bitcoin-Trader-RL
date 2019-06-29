@@ -194,6 +194,12 @@ class BitcoinTradingEnv(gym.Env):
 
         return obs, reward, done, {}
 
+def write_to_csv(filename, data):
+    with open(filename, 'a', newline='') as output_file:
+        csv_writer = csv.writer(output_file)
+        csv_writer.writerow(data)
+    output_file.close
+
     def render(self, mode='human'):
         if mode == 'system':
             print('Price: ' + str(self._current_price()))

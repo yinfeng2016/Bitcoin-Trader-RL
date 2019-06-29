@@ -9,9 +9,9 @@ from stable_baselines import A2C, ACKTR, PPO2
 from env.BitcoinTradingEnv import BitcoinTradingEnv
 from util.indicators import add_indicators
 
-curr_idx = 7
+curr_idx = 3
 reward_strategy = 'sortino'
-input_data_file = 'data/Coinbase_BTCUSD_1h_2.csv'
+input_data_file = 'binance.csv'
 params_db_file = 'sqlite:///params.db'
 
 study_name = 'ppo2_' + reward_strategy
@@ -29,7 +29,8 @@ df_init = add_indicators(df_init.reset_index())
 test_len = int(len(df_init) * 0.021)
 train_len = int(len(df_init)) - test_len
 
-test_df = df_init[train_len:]
+# test_df = df_init[train_len:]
+test_df = df_init[16400:]
 print('before load test_env')
 test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
     test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
@@ -51,9 +52,22 @@ model_params = {
     'lam': params['lam'],
 }
 
-model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_3' +  '.pkl', env=test_env)
+model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_6' +  '.pkl', env=test_env)
 
 while true: 
+    df_init = pd.read_csv('binance.csv')
+    # df = df.drop(['Symbol'], axis=1)
+    df_init = df_init.sort_values(['Date'])
+    df_init = add_indicators(df_init.reset_index())
+
+    test_len = int(len(df_init) * 0.021)
+    train_len = int(len(df_init)) - test_len
+
+    test_df = df_init[16400:]
+    print('before load test_env')
+    test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
+        test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
+    print('after load test_env')
 
     obs, done = test_env.reset(), False
     while not done:

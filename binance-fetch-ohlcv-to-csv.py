@@ -53,7 +53,7 @@ def write_to_csv(filename, data):
         csv_writer.writerows(data)
 
 
-def scrape_candles_to_csv(filename, exchange_id, max_retries, symbol, timeframe, since):
+def scrape_candles_to_csv(filename, exchange_id, max_retries, symbol, timeframe, since, limit):
     # instantiate the exchange by id
     exchange = getattr(ccxt, exchange_id)({
         'enableRateLimit': True,  # required by the Manual
@@ -64,7 +64,7 @@ def scrape_candles_to_csv(filename, exchange_id, max_retries, symbol, timeframe,
     # preload all markets from the exchange
     exchange.load_markets()
     # fetch all candles
-    ohlcv = scrape_ohlcv(exchange, max_retries, symbol, timeframe, since)
+    ohlcv = scrape_ohlcv(exchange, max_retries, symbol, timeframe, since, limit)
     # save them to csv file
     write_to_csv(filename, ohlcv)
     print('Saved', len(ohlcv), 'candles from', exchange.iso8601(ohlcv[0][0]), 'to', exchange.iso8601(ohlcv[-1][0]), 'to', filename)
@@ -72,4 +72,4 @@ def scrape_candles_to_csv(filename, exchange_id, max_retries, symbol, timeframe,
 
 # -----------------------------------------------------------------------------
 
-scrape_candles_to_csv('binance.csv', 'binance', 3, 'BTC/USDT', '1h', '2017-07-01T00:00:00Z')
+scrape_candles_to_csv('binance_3.csv', 'binance', 3, 'BTC/USDT', '1h', '2019-05-01T00:00:00Z', 100)

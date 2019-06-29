@@ -57,7 +57,7 @@ last = ohlcv[len(ohlcv) - 1]
 print(ohlcv[0][0])  # print last closing price
 
 
-df = pd.read_csv('binance_2.csv')
+df = pd.read_csv('binance.csv')
 # # df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 # # print (df)
@@ -76,7 +76,7 @@ def scrape_ohlcv(exchange, symbol, timeframe, filename, df):
         # if df.iloc[-1].values[0] >= ohlcv[0][0] - 3600000:
         #     time.sleep(60)
         # if we have reached the checkpoint
-        df = pd.read_csv('binance_2.csv')
+        df = pd.read_csv('binance.csv')
         df = df.sort_values(['Date'])
         if ohlcv[0][0] > df.iloc[-1].values[0]:
             write_to_csv(filename, ohlcv[0])
@@ -107,4 +107,4 @@ def scrape_candles_to_csv(filename, exchange_id, symbol, timeframe):
 
 # -----------------------------------------------------------------------------
 
-scrape_candles_to_csv('binance_2.csv', 'binance', 'BTC/USDT', '1h')
+scrape_candles_to_csv('binance.csv', 'binance', 'BTC/USDT', '1h')
