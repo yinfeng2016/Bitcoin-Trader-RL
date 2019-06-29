@@ -42,17 +42,17 @@ print('after load test_env')
 
 
 
-model_params = {
-    'n_steps': int(params['n_steps']),
-    'gamma': params['gamma'],
-    'learning_rate': params['learning_rate'],
-    'ent_coef': params['ent_coef'],
-    'cliprange': params['cliprange'],
-    'noptepochs': int(params['noptepochs']),
-    'lam': params['lam'],
-}
+# model_params = {
+#     'n_steps': int(params['n_steps']),
+#     'gamma': params['gamma'],
+#     'learning_rate': params['learning_rate'],
+#     'ent_coef': params['ent_coef'],
+#     'cliprange': params['cliprange'],
+#     'noptepochs': int(params['noptepochs']),
+#     'lam': params['lam'],
+# }
 
-model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_6' +  '.pkl', env=test_env)
+# model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_6' +  '.pkl', env=test_env)
 
 while True: 
     df_init = pd.read_csv('binance.csv')
@@ -68,6 +68,19 @@ while True:
     test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
         test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
     print('after load test_env')
+
+    model_params = {
+    'n_steps': int(params['n_steps']),
+    'gamma': params['gamma'],
+    'learning_rate': params['learning_rate'],
+    'ent_coef': params['ent_coef'],
+    'cliprange': params['cliprange'],
+    'noptepochs': int(params['noptepochs']),
+    'lam': params['lam'],
+    }
+    
+    model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_6' +  '.pkl', env=test_env)
+
 
     obs, done = test_env.reset(), False
     while not done:
