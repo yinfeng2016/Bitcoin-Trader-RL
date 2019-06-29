@@ -139,6 +139,7 @@ class BitcoinTradingEnv(gym.Env):
             [cost],
             [btc_sold],
             [sales]
+            [self.btc_held]
         ], axis=1)
 
     def _reward(self):
@@ -177,6 +178,7 @@ class BitcoinTradingEnv(gym.Env):
             [0],
             [0],
             [0],
+            [0],
             [0]
         ])
         self.trades = []
@@ -196,9 +198,9 @@ class BitcoinTradingEnv(gym.Env):
 
     def render(self, mode='human'):
         if mode == 'system':
-            # print('BTC Balance: ' + str(self.account_history[5][self.current_step]))
+            print('BTC Balance: ' + str(self.account_history[5][self.current_step]))
             print(
-                'Buy: ' + str(self.account_history[2][self.current_step]) + '; ' + ' Sell: ' + str(self.account_history[4][self.current_step]))
+                'Buy: ' + str(self.account_history[1][self.current_step]) + '; ' +' Sell: ' + str(self.account_history[3][self.current_step]))
 
             print('price: ' + str(self._current_price())+ ';',' Net worth: ' + str(self.net_worths[-1]))
 
