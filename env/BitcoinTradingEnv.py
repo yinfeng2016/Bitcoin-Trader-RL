@@ -198,7 +198,7 @@ class BitcoinTradingEnv(gym.Env):
         if mode == 'system':
             # print('BTC Balance: ' + str(self.account_history[5][self.current_step]))
             print(
-                'Buy: ' + str(self.account_history[1][self.current_step]) + '; ' +' Sell: ' + str(self.account_history[3][self.current_step]))
+                'Buy: ' + str(self.account_history[2][self.current_step]) + '; ' + ' Sell: ' + str(self.account_history[4][self.current_step]))
 
             print('price: ' + str(self._current_price())+ ';',' Net worth: ' + str(self.net_worths[-1]))
 
