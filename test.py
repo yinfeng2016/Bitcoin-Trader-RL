@@ -26,7 +26,7 @@ df_init = pd.read_csv('./data/binance_2.csv')
 df_init = df_init.sort_values(['Date'])
 df_init = add_indicators(df_init.reset_index())
 
-test_len = int(len(df_init) * 0.042)
+test_len = int(len(df_init) * 0.021)
 train_len = int(len(df_init)) - test_len
 
 test_df = df_init[train_len:]
@@ -53,10 +53,11 @@ model_params = {
 
 model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_3' +  '.pkl', env=test_env)
 
-obs, done = test_env.reset(), False
-# while not done:
-while true:
-    action, _states = model.predict(obs)
-    obs, reward, done, info = test_env.step(action)
+while true: 
 
-    test_env.render(mode="system")
+    obs, done = test_env.reset(), False
+    while not done:
+        action, _states = model.predict(obs)
+        obs, reward, done, info = test_env.step(action)
+        test_env.render(mode="system")
+    time.sleep(10)
