@@ -8,6 +8,7 @@ from stable_baselines import A2C, ACKTR, PPO2
 
 from env.BitcoinTradingEnv import BitcoinTradingEnv
 from util.indicators import add_indicators
+import time
 
 curr_idx = 3
 reward_strategy = 'sortino'
