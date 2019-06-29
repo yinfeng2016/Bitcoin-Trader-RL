@@ -178,6 +178,7 @@ class BitcoinTradingEnv(gym.Env):
             [0],
             [0],
             [0],
+            [0],
             [0]
         ])
         self.trades = []

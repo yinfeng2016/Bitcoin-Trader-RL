@@ -69,10 +69,8 @@ while True:
     train_len = int(len(df_init)) - test_len
 
     test_df = df_init[16400:]
-    print('before load test_env')
     test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
         test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
-    print('after load test_env')
 
     model_params = {
     'n_steps': int(params['n_steps']),
