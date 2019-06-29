@@ -16,7 +16,7 @@ from util.indicators import add_indicators
 
 curr_idx = -1
 reward_strategy = 'sortino'
-input_data_file = 'data/Coinbase_BTCUSD_1h_2.csv'
+input_data_file = 'binance.csv'
 params_db_file = 'sqlite:///params.db'
 
 study_name = 'ppo2_' + reward_strategy
@@ -31,7 +31,7 @@ df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 df = add_indicators(df.reset_index())
 
-test_len = int(len(df) * 0.042)
+test_len = int(len(df) * 0.021)
 train_len = int(len(df)) - test_len
 
 train_df = df[:train_len]
