@@ -21,7 +21,7 @@ params = study.best_trial.params
 print("Testing PPO2 agent with params:", params)
 print("Best trial:", -1 * study.best_trial.value)
 
-df_init = pd.read_csv('./data/binance_2.csv')
+df_init = pd.read_csv('binance_2.csv')
 # df = df.drop(['Symbol'], axis=1)
 df_init = df_init.sort_values(['Date'])
 df_init = add_indicators(df_init.reset_index())
