@@ -54,7 +54,7 @@ model_params = {
 
 model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_6' +  '.pkl', env=test_env)
 
-while true: 
+while True: 
     df_init = pd.read_csv('binance.csv')
     # df = df.drop(['Symbol'], axis=1)
     df_init = df_init.sort_values(['Date'])
