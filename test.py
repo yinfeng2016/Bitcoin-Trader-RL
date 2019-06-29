@@ -30,11 +30,11 @@ test_len = int(len(df_init) * 0.021)
 train_len = int(len(df_init)) - test_len
 
 # test_df = df_init[train_len:]
-test_df = df_init[16400:]
-print('before load test_env')
-test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
-    test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
-print('after load test_env')
+# test_df = df_init[16400:]
+# print('before load test_env')
+# test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
+#     test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
+# print('after load test_env')
 # test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
 # test_df, reward_func=reward_strategy, forecast_len=4, confidence_interval=0.81)])
 
@@ -55,6 +55,10 @@ print('after load test_env')
 # model = PPO2.load('./agents/ppo2_' + reward_strategy + '_' + str(curr_idx) + '_6' +  '.pkl', env=test_env)
 
 while True: 
+    test_df = df_init[16400:]
+    test_env = DummyVecEnv([lambda: BitcoinTradingEnv(
+        test_df, reward_func=reward_strategy, forecast_len=int(params['forecast_len']), confidence_interval=params['confidence_interval'])])
+    print('after while')
     df_init = pd.read_csv('binance.csv')
     # df = df.drop(['Symbol'], axis=1)
     df_init = df_init.sort_values(['Date'])
