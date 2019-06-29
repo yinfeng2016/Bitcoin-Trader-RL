@@ -27,11 +27,11 @@ print("Training PPO2 agent with params:", params)
 print("Best trial reward:", -1 * study.best_trial.value)
 
 df = pd.read_csv(input_data_file)
-df = df.drop(['Symbol'], axis=1)
+# df = df.drop(['Symbol'], axis=1)
 df = df.sort_values(['Date'])
 df = add_indicators(df.reset_index())
 
-test_len = int(len(df) * 0.021)
+test_len = int(len(df) * 0.042)
 train_len = int(len(df)) - test_len
 
 train_df = df[:train_len]
