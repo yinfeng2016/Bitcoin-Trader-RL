@@ -48,7 +48,7 @@ def scrape_ohlcv(exchange, max_retries, symbol, timeframe, since, limit):
 
 
 def write_to_csv(filename, data):
-    with open(filename, mode='w') as output_file:
+    with open(filename, mode='w', newline = '') as output_file:
         csv_writer = csv.writer(output_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         csv_writer.writerows(data)
 
